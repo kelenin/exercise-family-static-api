@@ -39,12 +39,10 @@ def handle_hello():
 
 @app.route('/member/<int:member_id>', methods=['GET','DELETE'])
 def get_id(member_id):
-    body = request.json
-
     if request.method=='GET' :
         search = jackson_family.get_member(member_id)
         if search != None:
-            return jsonify(search.serialize()), 200
+            return jsonify(search), 200
         else:
             return 'No se ha encontrado', 404
     else:

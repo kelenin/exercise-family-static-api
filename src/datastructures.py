@@ -14,7 +14,7 @@ class FamilyStructure:
     def __init__(self, last_name):
         self.last_name = last_name
         # example list of members
-        self._members = [{}]
+        self._members = []
 
     # read-only: Use this method to generate random members ID's when adding members into the list
     def _generateId(self):
@@ -22,13 +22,13 @@ class FamilyStructure:
 
     def add_member(self, member):
         # fill this method and update the return        
-        persona = {
+        persona = [{
             "id": self._generateId(),
             "first_name": member["first_name"],
             "last_name": self.last_name,
             "age": member["age"],
             "lucky_numbers": member["lucky_numbers"]
-        }
+        }]
         self._members.append(persona)
         return persona
 
@@ -38,7 +38,8 @@ class FamilyStructure:
 
     def get_member(self, id):
         # fill this method and update the return
-        return self._members[id]
+        return self._generateId()
+        #return self._members[id]
 
     # this method is done, it returns a list with all the family members
     def get_all_members(self):
