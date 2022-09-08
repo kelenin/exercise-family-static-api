@@ -35,7 +35,7 @@ def handle_hello():
         "family": members
     }]
 
-    return jsonify(response_body), 200
+    return jsonify(members), 200
 
 @app.route('/member/<int:member_id>', methods=['GET','DELETE'])
 def get_id(member_id):
